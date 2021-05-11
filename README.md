@@ -1,3 +1,11 @@
+# FKIE multimaster for ROS
+
+The ROS stack of *fkie_multimaster* offers a complete solution for using ROS with multicores.
+In addition, Node Manager with a daemon provide a GUI-based management environment that is very useful to manage ROS-launch configurations and control running nodes, also in a single-core system.
+
+![multimaster overview](multimaster_overview.png)
+
+
 ## Install
 
 The communication between the Node Manager GUI and the Daemon is based on Python [gRPC](https://grpc.io/). If you are using Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. For Ubuntu 18.04 LTS, we provide a [PPA backport of the gRPC libraries](https://launchpad.net/~roehling/+archive/ubuntu/grpc). If your Ubuntu version is older than that, you need to install `grpcio-tools` from [PyPI](https://pypi.org/project/grpcio-tools/).
@@ -89,13 +97,6 @@ Whats new:
  * Monitoring for ROS nodes and system resources on remote hosts.
 
 > Old version is available on branch: `old_master` and is no longer supported!
-
-# FKIE multimaster for ROS
-
-The ROS stack of *fkie_multimaster* offers a complete solution for using ROS with multicores.
-In addition, Node Manager with a daemon provide a GUI-based management environment that is very useful to manage ROS-launch configurations and control running nodes, also in a single-core system.
-
-![multimaster overview](multimaster_overview.png)
 
 
 
