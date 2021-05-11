@@ -1,3 +1,21 @@
+## Install
+
+The communication between the Node Manager GUI and the Daemon is based on Python [gRPC](https://grpc.io/). If you are using Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. For Ubuntu 18.04 LTS, we provide a [PPA backport of the gRPC libraries](https://launchpad.net/~roehling/+archive/ubuntu/grpc). If your Ubuntu version is older than that, you need to install `grpcio-tools` from [PyPI](https://pypi.org/project/grpcio-tools/).
+
+You can run the following commands to setup a build from source:
+
+```
+cd catkin_ws/src
+git clone https://github.com/JOiiNT-LAB/multimaster_fkie.git multimaster
+rosdep update
+rosdep install -i --as-root pip:false --reinstall --from-paths multimaster
+```
+
+Then build all packages:
+```
+catkin build fkie_multimaster
+```
+
 ## Launch MULTIMASTER
 
 ```
@@ -79,28 +97,8 @@ In addition, Node Manager with a daemon provide a GUI-based management environme
 
 ![multimaster overview](multimaster_overview.png)
 
-## Packages have been renamed
 
-The FKIE multimaster packages used to have an \_fkie suffix. In conformance with [REP-144](http://www.ros.org/reps/rep-0144.html), all packages have been renamed with an fkie\_ prefix, starting from version 1.0.0.
-If you have built an older version from source, make sure to remove the build artifacts of the old versions from your build space.
 
-## Install
-
-The communication between the Node Manager GUI and the Daemon is based on Python [gRPC](https://grpc.io/). If you are using Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. For Ubuntu 18.04 LTS, we provide a [PPA backport of the gRPC libraries](https://launchpad.net/~roehling/+archive/ubuntu/grpc). If your Ubuntu version is older than that, you need to install `grpcio-tools` from [PyPI](https://pypi.org/project/grpcio-tools/).
-
-You can run the following commands to setup a build from source:
-
-```
-cd catkin_ws/src
-git clone https://github.com/fkie/multimaster_fkie.git multimaster
-rosdep update
-rosdep install -i --as-root pip:false --reinstall --from-paths multimaster
-```
-
-Then build all packages:
-```
-catkin build fkie_multimaster
-```
 
 ## Documentation
 
