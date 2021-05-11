@@ -23,7 +23,7 @@ In order for the changes to take effect, execute the following command:
 sudo service procps restart
 ```
 To check which multicast groups are already defined in a computer, execute the following
-command.Section 3 Single computer ROS networks 7
+command.
 ```
 netstat -g
 ```
