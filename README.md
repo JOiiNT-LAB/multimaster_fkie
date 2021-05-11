@@ -8,6 +8,35 @@ rosrun fkie_master_discovery master_discovery _mcast_group:=224.0.0.1
 rosrun fkie_master_sync master_sync
 ```
 
+To list masters in network
+```
+rosservice call /master_discovery/list_masters
+```
+
+## Enable multicast
+To permanently enable the multicast feature, edit the /etc/sysctl.conf file and add the following line, or uncomment it, if it already exists, and change its default value.
+```
+net.ipv4.icmp_echo_ignore_broadcasts=0
+```
+In order for the changes to take effect, execute the following command:
+```
+sudo service procps restart
+```
+To check which multicast groups are already defined in a computer, execute the following
+command.Section 3 Single computer ROS networks 7
+```
+netstat -g
+```
+This command will report all the IP addresses enabled for multicast for each of the network
+interfaces available, both for IPv4 and IPv6. The standard IP address for multicast is 224.0.0.1,
+that should appear on the list provided by the last command, and it is the one we will use.
+At this point, to check whether the multicast feature is working or not, execute the following
+command, at any computer.
+
+```
+ping 224.0.0.1
+```
+
 
 ## This is a new version with daemon instance!
 
