@@ -56,7 +56,7 @@ ROS_MASTER_URI= http://192.168.0.5:1311
 
 ## Troubleshooting
 
-If running master_discovery gives you an error regarding to configure your network interface, it regars the multicast address, so follow what it say, for example:
+If running master_discovery gives you an error regarding to configure your network interface, it regards the multicast address, so follow what it say, for example:
 
 ```
 sudo route add -net 224.0.0.0 netmast 224.0.0.0 <your-network-interface-name>
