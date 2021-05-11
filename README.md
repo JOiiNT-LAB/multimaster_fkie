@@ -23,24 +23,6 @@ Then build all packages:
 ```
 catkin build fkie_multimaster
 ```
-
-## Launch MULTIMASTER
-
-```
-roslaunch fkie_master_discovery multimaster.launch
-```
-or
-
-```
-rosrun fkie_master_discovery master_discovery _mcast_group:=224.0.0.1
-rosrun fkie_master_sync master_sync
-```
-
-To list masters in network
-```
-rosservice call /master_discovery/list_masters
-```
-
 ## Enable multicast
 To permanently enable the multicast feature, edit the /etc/sysctl.conf file and add the following line, or uncomment it, if it already exists, and change its default value.
 ```
@@ -87,6 +69,24 @@ If running master_discovery gives you an error regarding to configure your netwo
 ```
 sudo route add -net 224.0.0.0 netmast 224.0.0.0 <your-network-interface-name>
 ```
+
+## Launch MULTIMASTER
+
+```
+roslaunch fkie_master_discovery multimaster.launch
+```
+or
+
+```
+rosrun fkie_master_discovery master_discovery _mcast_group:=224.0.0.1
+rosrun fkie_master_sync master_sync
+```
+
+To list masters in network
+```
+rosservice call /master_discovery/list_masters
+```
+
 
 ## This is a new version with daemon instance!
 
