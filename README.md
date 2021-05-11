@@ -39,7 +39,20 @@ command, at any computer.
 ping 224.0.0.1
 ```
 
+## /etc/hosts
+set your ip in the subnet and all other masters ip address
 
+## .bashrc
+Every master computer have to set ROS_MASTER_URI as the own machine address.
+For example, in the "computer1" machine we have "192.168.0.5" as ip address in the subnet:
+in the .bashrc file i'll write
+```
+ROS_MASTER_URI= http://computer1:1311
+```
+if /etc/hosts is well written, or
+```
+ROS_MASTER_URI= http://192.168.0.5:1311
+```
 ## This is a new version with daemon instance!
 
 Whats new:
