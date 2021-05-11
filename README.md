@@ -98,6 +98,10 @@ Whats new:
 
 > Old version is available on branch: `old_master` and is no longer supported!
 
+192.168.0.50	jntlbmc
+192.168.0.200	SXLS0-200916AA
+192.168.0.20	joiintlab-XPS-13-9360
+192.168.0.40	nuk1-NUC10i7FNK
 
 
 
