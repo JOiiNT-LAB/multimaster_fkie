@@ -1,3 +1,14 @@
+```
+roslaunch fkie_master_discovery multimaster.launch
+```
+or
+
+```
+rosrun fkie_master_discovery master_discovery _mcast_group:=224.0.0.1
+rosrun fkie_master_sync master_sync
+```
+
+
 ## This is a new version with daemon instance!
 
 Whats new:
