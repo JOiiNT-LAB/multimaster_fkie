@@ -9,7 +9,7 @@
   <node pkg="fkie_master_discovery" type="route.sh" name="route" output="screen" args="$(arg user_password) $(arg user_interface)" />
 
   <node name="multimaster_discovery" pkg="fkie_master_discovery" output="screen" type="master_discovery" >
-    <param name="_mcast_group" value="$(arg mcast_address)" />
+    <param name="mcast_group" value="$(arg mcast_address)" />
   </node>
 
   <node name="multimaster_sync" pkg="fkie_master_sync" type="master_sync" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " >
