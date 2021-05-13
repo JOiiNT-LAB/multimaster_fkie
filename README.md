@@ -50,6 +50,7 @@ ping 224.0.0.1
 ## /etc/hosts
 set your ip in the subnet and all other masters ip address
 JOiintlab configuration:
+
 1. 192.168.0.50	jntlbmc
 2. 192.168.0.200	SXLS0-200916AA
 3. 192.168.0.20	joiintlab-XPS-13-9360
