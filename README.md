@@ -48,7 +48,14 @@ ping 224.0.0.1
 ```
 
 ## /etc/hosts
-set your ip in the subnet and all other masters ip address
+set your ip in the subnet and all other masters ip address.
+
+JOiiNT LAB configuration:
+
+1. 192.168.0.50	jntlbmc # PILOT STATION
+2. 192.168.0.200	SXLS0-200916AA #MOBILE ROBOT
+3. 192.168.0.20	joiintlab-XPS-13-9360 #PC ON THE MOBILE ROBOT
+4. 192.168.0.40	nuk1-NUC10i7FNK #FRANKA PC
 
 ## .bashrc
 Every master computer have to set ROS_MASTER_URI as the own machine address.
@@ -62,20 +69,18 @@ if /etc/hosts is well written, or
 export ROS_MASTER_URI= http://192.168.0.5:11311
 ```
 
-## Troubleshooting
-
-If running master_discovery gives you an error regarding to configure your network interface, it regards the multicast address, so follow what it say, for example:
-
+## USAGE
+At first configure the file launcher _multimaster.launch_ specifying the multicast address (usually 224.0.0.1), the user password and the network interface:
 ```
-sudo route add -net 224.0.0.0 netmast 224.0.0.0 <your-network-interface-name>
+  <arg name="mcast_address" default="224.0.0.1" />
+  <arg name="user_password" default="<machine-user>" /> 
+  <arg name="user_interface" default="<interface-name>" /> #example: wlp62s0 or enp3s0
 ```
-
-## Launch MULTIMASTER
-
+finally launch the file:
 ```
 roslaunch fkie_master_discovery multimaster.launch
 ```
-or
+As alternative method you can run the node manually:
 
 ```
 rosrun fkie_master_discovery master_discovery _mcast_group:=224.0.0.1
@@ -85,6 +90,14 @@ rosrun fkie_master_sync master_sync
 To list masters in network
 ```
 rosservice call /master_discovery/list_masters
+```
+
+## Troubleshooting
+
+If running master_discovery gives you an error regarding to configure your network interface, it regards the multicast address, so follow what it say, for example:
+
+```
+sudo route add -net 224.0.0.0 netmast 224.0.0.0 <your-network-interface-name>
 ```
 
 
@@ -97,13 +110,6 @@ Whats new:
  * Monitoring for ROS nodes and system resources on remote hosts.
 
 > Old version is available on branch: `old_master` and is no longer supported!
-
-192.168.0.50	jntlbmc
-192.168.0.200	SXLS0-200916AA
-192.168.0.20	joiintlab-XPS-13-9360
-192.168.0.40	nuk1-NUC10i7FNK
-
-
 
 ## Documentation
 
