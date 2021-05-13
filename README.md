@@ -48,7 +48,8 @@ ping 224.0.0.1
 ```
 
 ## /etc/hosts
-set your ip in the subnet and all other masters ip address
+set your ip in the subnet and all other masters ip address.
+
 JOiintlab configuration:
 
 1. 192.168.0.50	jntlbmc
