@@ -50,12 +50,12 @@ ping 224.0.0.1
 ## /etc/hosts
 set your ip in the subnet and all other masters ip address.
 
-JOiintlab configuration:
+JOiiNT LAB configuration:
 
-1. 192.168.0.50	jntlbmc
-2. 192.168.0.200	SXLS0-200916AA
-3. 192.168.0.20	joiintlab-XPS-13-9360
-4. 192.168.0.40	nuk1-NUC10i7FNK
+1. 192.168.0.50	jntlbmc # PILOT STATION
+2. 192.168.0.200	SXLS0-200916AA #MOBILE ROBOT
+3. 192.168.0.20	joiintlab-XPS-13-9360 #PC ON THE MOBILE ROBOT
+4. 192.168.0.40	nuk1-NUC10i7FNK #FRANKA PC
 
 ## .bashrc
 Every master computer have to set ROS_MASTER_URI as the own machine address.
