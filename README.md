@@ -30,7 +30,8 @@ rosdep install -i --as-root pip:false --reinstall --from-paths multimaster_fkie
 
 Then build all packages:
 ```
-catkin build fkie_multimaster
+cd catkin_ws
+catkin_make
 ```
 ## Enable multicast
 To permanently enable the multicast feature, edit the /etc/sysctl.conf file and add the following line, or uncomment it, if it already exists, and change its default value.
