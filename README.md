@@ -8,20 +8,30 @@ In addition, Node Manager with a daemon provide a GUI-based management environme
 
 ## Install
 
-The communication between the Node Manager GUI and the Daemon is based on Python [gRPC](https://grpc.io/). If you are using Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. For Ubuntu 18.04 LTS, we provide a [PPA backport of the gRPC libraries](https://launchpad.net/~roehling/+archive/ubuntu/grpc). If your Ubuntu version is older than that, you need to install `grpcio-tools` from [PyPI](https://pypi.org/project/grpcio-tools/).
+
+For Ubuntu 18.04 LTS:
+```
+sudo add-apt-repository ppa:roehling/grpc
+sudo apt-get update
+```
+
+or 
+
+For Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. 
 
 You can run the following commands to setup a build from source:
 
 ```
 cd catkin_ws/src
-git clone https://github.com/JOiiNT-LAB/multimaster_fkie.git multimaster
+git clone https://github.com/JOiiNT-LAB/multimaster_fkie.git
 rosdep update
-rosdep install -i --as-root pip:false --reinstall --from-paths multimaster
+rosdep install -i --as-root pip:false --reinstall --from-paths multimaster_fkie
 ```
 
 Then build all packages:
 ```
-catkin build fkie_multimaster
+cd catkin_ws
+catkin_make
 ```
 ## Enable multicast
 To permanently enable the multicast feature, edit the /etc/sysctl.conf file and add the following line, or uncomment it, if it already exists, and change its default value.
