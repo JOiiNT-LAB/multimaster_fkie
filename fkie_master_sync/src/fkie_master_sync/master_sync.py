@@ -117,6 +117,7 @@ class Main(object):
     def _callback_perform_resync(self):
         if self.resync_timer is not None:
             self.resync_timer.cancel()
+        print("_rosmsg_callback_master_state")
         self.resync_timer = threading.Timer(0.1, self._perform_resync)
         self.resync_timer.start()
 
