@@ -4,8 +4,8 @@
   <arg name="node_start_delay" default="5.0"/> 
   <arg name="mcast_address" default="224.0.0.1" />
   <arg name="user_password" default="jntlbmc" /> 
-  <!-- <arg name="user_interface" default="wlp112s0" /> -->
-  <arg name="user_interface" default="enp111s0" />  
+  <arg name="user_interface" default="wlp112s0" />
+  <!-- <arg name="user_interface" default="enp111s0" />   -->
   
 
   <node pkg="fkie_master_discovery" type="route.sh" name="route" output="screen" args="$(arg user_password) $(arg user_interface)" />
@@ -39,7 +39,7 @@
 
     <!-- The list of nodes, which are to be ignored while a synchroniation. All their topics and services are ignored!
     These are defaults and cannot be removed: [/rosout, "/*master_sync* node", "remote /*master_discovery* node", "/*node_manager", /*zeroconf] -->
-    <rosparam param="ignore_nodes">["/robot/*","/pilot_pilot*"]</rosparam>
+    <rosparam param="ignore_nodes">[]</rosparam>
 
     <!-- The list of nodes to synchronize. Only topics of this nodes are synchronized. The ~ignore_nodes, ~ignore_topics and ~ignore_services lists are processed first. -->
     <rosparam param="sync_nodes">[]</rosparam>
@@ -47,7 +47,6 @@
     <!-- The list of topics, which are to be ignored while a synchroniation. The ~ignore_nodes list is processed first.
     These are defaults and cannot be removed: ['/rosout', '/rosout_agg'] -->
     <rosparam param="ignore_topics">[]</rosparam>
-    <!-- <rosparam param="ignore_topics">["/pilot_pilot1/*","/videostream/*"]</rosparam> -->
     <rosparam param="ignore_publishers">[]</rosparam>
     <rosparam param="ignore_subscribers">[]</rosparam>
 
@@ -59,7 +58,7 @@
     <rosparam param="ignore_services">[]</rosparam>
 
     <!-- The list of services to synchronize. The ~ignore_nodes and ~ignore_services lists are processed first. -->
-    <rosparam param="sync_services">["/robot_*","/pilot_pilot1"]</rosparam>
+    <rosparam param="sync_services">[]</rosparam>
 
     <!-- This parameter is only regarded, if sync_nodes or sync_topics are set. In this case the subscribed and published topics are synchronized even if they are not in the sync_* list -->
     <param name="sync_topics_on_demand" value="False" />
