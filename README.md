@@ -74,11 +74,11 @@ Every master computer have to set ROS_MASTER_URI as the own machine address.
 For example, in the "computer1" machine we have "192.168.0.5" as ip address in the subnet:
 in the .bashrc file i'll write
 ```
-export ROS_MASTER_URI= http://computer1:11311
+export ROS_MASTER_URI=http://computer1:11311
 ```
 if /etc/hosts is well written, or
 ```
-export ROS_MASTER_URI= http://192.168.0.5:11311
+export ROS_MASTER_URI=http://192.168.0.5:11311
 ```
 
 ## USAGE
