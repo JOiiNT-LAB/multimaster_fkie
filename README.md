@@ -13,13 +13,16 @@ For Ubuntu 18.04 LTS:
 ```
 sudo add-apt-repository ppa:roehling/grpc
 sudo apt-get update
+sudo apt install python-grpcio python-grpc-tools
 ```
 
 or 
 
-For Ubuntu 18.10 or later, you can simply run `sudo apt install python-grpcio python-grpc-tools`. 
-For Ubuntu 20.04 , you can  run `sudo apt install python3-grpcio python3-grpc-tools`. 
+For Ubuntu 20.04:
 
+```
+sudo apt install python3-grpcio python3-grpc-tools
+```
 
 You can run the following commands to setup a build from source:
 
