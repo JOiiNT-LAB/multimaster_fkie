@@ -3,7 +3,7 @@
 <launch>
   <arg name="node_start_delay" default="5.0"/> 
   <arg name="mcast_address" default="224.0.0.1" />
-  <arg name="user_interface" default="ztksetiecy" />    
+  <arg name="user_interface" default="eth0" />    
 
   <node pkg="fkie_master_discovery" type="route_docker.sh" name="route" output="screen"/>
 
