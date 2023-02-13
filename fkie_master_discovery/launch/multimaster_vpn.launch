@@ -3,7 +3,7 @@
 <launch>
   <arg name="node_start_delay" default="5.0"/> 
   <arg name="mcast_address" default="224.0.0.1" />
-  <arg name="user_password" default="jntlbmc" /> 
+  <arg name="user_password" default="123" /> 
   <arg name="user_interface" default="ztksetiecy" />  
   
   <node pkg="fkie_master_discovery" type="route.sh" name="route" output="screen" args="$(arg user_password) $(arg user_interface)" />
@@ -71,5 +71,7 @@
     <!-- checks for eqaul hostname of topic provider and master uri. Usefull on warning "Wait for topic with type..." still if master_discovery is running. -->
     <param name="check_host" value="True" />
   </node>
+
+  <node pkg="fkie_master_discovery" type="shutdown_vpn.sh" name="shutdown_vpn" output="screen" />
 
 </launch>
