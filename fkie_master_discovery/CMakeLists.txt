@@ -9,8 +9,10 @@ catkin_package(CATKIN_DEPENDS fkie_multimaster_msgs std_srvs)
 
 catkin_install_python(
     PROGRAMS
+        scripts/shutdown_vpn.ph
         nodes/master_discovery
         nodes/zeroconf
+        nodes/shutdown_vpn
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

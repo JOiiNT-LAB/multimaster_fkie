@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 catch_kill() {
   echo "Caught SIGKILL signal!"
