@@ -14,6 +14,7 @@ def shutdown_callback():
     rospy.loginfo("It's shutdown time!")
 
 
+if __name__ == '__main__':
 
-rospy.on_shutdown(shutdown_callback)
-shutdown_hook()
+    rospy.on_shutdown(shutdown_callback)
+    shutdown_hook()
