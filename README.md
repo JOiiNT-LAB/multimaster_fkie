@@ -62,7 +62,19 @@ command, at any computer.
 ping 224.0.0.1
 ```
 
-## /etc/hosts
+## Method 1 (recommanded)
+
+### .bashrc
+Every master computer have to set ROS_MASTER_IP and ROS_MASTER_URI as the own machine address.
+For example, in the "computer1" machine we have "192.168.0.5" as ip address in the subnet:
+```
+export ROS_IP = 192.168.0.5
+export ROS_MASTER_URI=http://192.168.0.5:11311
+```
+NOTE: you can find the available ip address with 'ifconfig' command on terminal
+
+## Method 2 (older versions)
+### /etc/hosts
 set your ip in the subnet and all other masters ip address.
 
 JOiiNT LAB configuration:
@@ -72,7 +84,7 @@ JOiiNT LAB configuration:
 3. 192.168.0.20	joiintlab-XPS-13-9360 #PC ON THE MOBILE ROBOT
 4. 192.168.0.40	nuk1-NUC10i7FNK #FRANKA PC
 
-## .bashrc
+### .bashrc
 Every master computer have to set ROS_MASTER_URI as the own machine address.
 For example, in the "computer1" machine we have "192.168.0.5" as ip address in the subnet:
 in the .bashrc file i'll write
@@ -89,7 +101,7 @@ At first configure the file launcher _multimaster.launch_ specifying the multica
 ```
   <arg name="mcast_address" default="224.0.0.1" />
   <arg name="user_password" default="<machine-user>" /> 
-  <arg name="user_interface" default="<interface-name>" /> #example: wlp62s0 or enp3s0
+  <arg name="user_interface" default="<interface-name>" /> #example: wlp62s0 or enp3s0 (check ifconfig)
 ```
 finally launch the file:
 ```
